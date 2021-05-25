@@ -10,6 +10,7 @@
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "intervention/image": "^2.5",
+        "jeroennoten/laravel-adminlte": "^3.6",
         "laravel/framework": "^8.40",
         "laravel/tinker": "^2.5",
         "mews/captcha": "~3.0",

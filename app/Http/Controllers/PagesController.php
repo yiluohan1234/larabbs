@@ -8,6 +8,7 @@ class PagesController extends Controller
 {
     public function root()
     {
-        return view('pages.root');
+        // return view('pages.root');
+        return view('fadmin.dashboard');
     }
 }
