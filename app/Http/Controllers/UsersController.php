@@ -13,9 +13,15 @@ class UsersController extends Controller
     {
         $this->middleware('auth', ['except' => ['show']]);
     }
+    public function index(Request $request)
+    {
+        $data = User::orderBy('id','ASC')->paginate(5);
+        
+        return view('fadmin.users.index',compact('data'));
+    }
     public function show(User $user)
     {
-        return view('users.show', compact('user'));
+        return view('fadmin.users.show', compact('user'));
     }
     public function edit(User $user)
     {
