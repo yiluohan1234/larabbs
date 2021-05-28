@@ -63,7 +63,9 @@
 
     </div>
 @stop
-
+@if (app()->isLocal())
+    @include('sudosu::user-selector')
+@endif
 @section('adminlte_js')
     @stack('js')
     @yield('js')
