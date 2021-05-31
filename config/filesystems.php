@@ -58,6 +58,12 @@ return [
             'visibility' => 'public',
             'url' => env('APP_URL').'/uploads',
         ],
+        'media-manager' => [
+            'driver' => 'local',
+            'root' => storage_path('app/media-manager'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
     ],
 
 
