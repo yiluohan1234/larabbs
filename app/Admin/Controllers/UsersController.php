@@ -75,13 +75,18 @@ class UsersController extends AdminController
         //用户编辑页
         $form = new Form(new User());
 
-        $form->text('name', __('用户名'));
+        $form->text('name', __('用户名'))->rules('required|between:3,25');
         $form->email('email', __('邮箱'));
-        $form->datetime('email_verified_at', __('激活时间'))->default(date('Y-m-d H:i:s'));
-        $form->password('password', __('密码'));
+        // $form->datetime('email_verified_at', __('激活时间'))->default(date('Y-m-d H:i:s'));
+        $form->password('password', __('密码'))->placeholder('输入 重置密码');
         // $form->text('remember_token', __('Remember token'));
-        $form->image('avatar', __('头像'));
+        $form->image('avatar', __('头像'))->move('/uploads/images/avatars/')    ;
         $form->text('introduction', __('简介'));
+        $form->saving(function (Form $form) {
+            if ($form->password) {
+                $form->password = bcrypt($form->password);
+                }
+        });
 
         return $form;
     }
