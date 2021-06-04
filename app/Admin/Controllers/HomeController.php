@@ -31,4 +31,9 @@ class HomeController extends Controller
             //     });
             // });
     }
+    public function redirect()
+    {
+        // The '/admin' route is not to be used as a page, because it breaks the menu's active state.
+        return redirect()->route('home');
+    }
 }
